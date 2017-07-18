@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+        "fmt"
+         "flag"
+    )
 
 func main () {
-	fmt.Printf ("under development.\n")
+	servPtr := flag.String("serv", "main", "a string")
+	
+	flag.Parse()
+	
+	fmt.Println("serv:" , *servPtr)
+	
+	fmt.Println("tail:", flag.Args())
 }
